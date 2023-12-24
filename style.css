@@ -38,9 +38,12 @@ body{
 .naviqasiya ul li{
     position: relative;
     width: 100%;
-    list-style: none;   
+    list-style: none;  
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;  
 }
-.naviqasiya ul li:hover{
+.naviqasiya ul li:hover,
+.naviqasiya ul li.hovered{
     background-color: var(--white);
 }
 .naviqasiya ul li:nth-child(1){
@@ -55,7 +58,8 @@ body{
     text-decoration: none;
     color: var(--white);
 }
-.naviqasiya ul li:hover a{
+.naviqasiya ul li:hover a,
+.naviqasiya ul li.hovered a{
     color: var(--blue);
 }
 .naviqasiya ul li a .ikon{
@@ -63,10 +67,114 @@ body{
     display: block;
     min-width: 60px;
     height: 60px;
-    line-height: 60px;
+    line-height: 75px;
     text-align: center;
 }
 .naviqasiya ul li a .ikon ion-icon{
-    font-size: 1.75rem;
+    font-size: 1.75rem;   
+}
+.naviqasiya ul li a .başlıq{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.naviqasiya ul li:hover a::before,
+.naviqasiya ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px 35px 0 10px var(--white);
+}
+.naviqasiya ul li:hover a::after,
+.naviqasiya ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px -35px 0 10px var(--white);
+}
+
+/* main */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;   
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2); 
+}
+.search label ion-icon{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;   
+}
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     
 }
